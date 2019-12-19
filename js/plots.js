@@ -274,13 +274,13 @@ function nutritionGrade(filename, columns, columnTitles, divId, title, colors) {
 const nutritionGradeColors1 = ['rgb(33,127,192)', 'rgb(233,81,37)'];
 const nutritionGradeColors2 = ['rgb(72,180,178)', 'rgb(255,77,55)'];
 
-nutritionGrade('jalil/ply_nutrition_grade_e250_world.csv', ['count_world'], ['World'], 'grade-e250-world', 'Grade distribution for E250 additive in the world', nutritionGradeColors1);
+nutritionGrade('ply_nutrition_grade_e250_world.csv', ['count_world'], ['World'], 'grade-e250-world', 'Grade distribution for E250 additive in the world', nutritionGradeColors1);
 
-nutritionGrade('jalil/ply_nutrition_grade_dangerous_additives.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-dangerous-additives', 'Grade distribution for dangerous additives', nutritionGradeColors1);
+nutritionGrade('ply_nutrition_grade_dangerous_additives.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-dangerous-additives', 'Grade distribution for dangerous additives', nutritionGradeColors1);
 
-nutritionGrade('jalil/ply_nutrition_grade_non_additives.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-non-additives', 'Grade distribution for non-additives', nutritionGradeColors1);
+nutritionGrade('ply_nutrition_grade_non_additives.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-non-additives', 'Grade distribution for non-additives', nutritionGradeColors1);
 
-Plotly.d3.csv(file('jalil/ply_average_additives_country.csv'), (err, rows) => {
+Plotly.d3.csv(file('ply_average_additives_country.csv'), (err, rows) => {
 
     const data = [{
         type: 'choropleth',
@@ -302,7 +302,7 @@ Plotly.d3.csv(file('jalil/ply_average_additives_country.csv'), (err, rows) => {
     Plotly.newPlot('top-country-additives', data, fixed(layout), plyConfig);
 });
 
-Plotly.d3.csv(file('jalil/ply_distribution_average_additives_product.csv'), (err, rows) => {
+Plotly.d3.csv(file('ply_distribution_average_additives_product.csv'), (err, rows) => {
 
     const total = sum(rows.map(r => r.count));
 
@@ -332,7 +332,7 @@ Plotly.d3.csv(file('jalil/ply_distribution_average_additives_product.csv'), (err
     Plotly.newPlot('additives-per-product', data, fixed(layout), plyConfig);
 });
 
-Plotly.d3.csv(file('jalil/ply_top_additives.csv'), (err, rows) => {
+Plotly.d3.csv(file('ply_top_additives.csv'), (err, rows) => {
 
     const total = sum(rows.map(r => r.count));
 
@@ -375,8 +375,8 @@ Plotly.d3.csv(file('jalil/ply_top_additives.csv'), (err, rows) => {
 });
 
 
-nutritionGrade('jalil/ply_nutrition_grade_allergens.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-allergens', 'Grade distribution for allergens', nutritionGradeColors1);
+nutritionGrade('ply_nutrition_grade_allergens.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-allergens', 'Grade distribution for allergens', nutritionGradeColors1);
 
-nutritionGrade('jalil/ply_nutrition_grade_non_allergens.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-non-allergens', 'Grade distribution for non-allergens', nutritionGradeColors1);
+nutritionGrade('ply_nutrition_grade_non_allergens.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-non-allergens', 'Grade distribution for non-allergens', nutritionGradeColors1);
 
-nutritionGrade('jalil/ply_nutrition_grade_palm_oil.csv', ['count_non_palm_oil', 'count_palm_oil'], ['No palm oil', 'Palm oil'], 'palm-oil', 'Grade distribution for palm oil products', nutritionGradeColors2);
+nutritionGrade('ply_nutrition_grade_palm_oil.csv', ['count_non_palm_oil', 'count_palm_oil'], ['No palm oil', 'Palm oil'], 'palm-oil', 'Grade distribution for palm oil products', nutritionGradeColors2);
