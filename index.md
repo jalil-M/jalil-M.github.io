@@ -27,6 +27,25 @@ layout: default
 <div id="products-ingredients"></div>
 
 
+<div id="grade-e250-world"></div>
+
+<div id="grade-dangerous-additives"></div>
+
+<div id="grade-non-additives"></div>
+
+
+<div id="top-country-additives"></div>
+
+<div id="additives-per-product"></div>
+
+<div id="top-additives"></div>
+
+<div id="grade-allergens"></div>
+
+<div id="grade-non-allergens"></div>
+
+<div id="palm-oil"></div>
+
 # Impact of social status on nutritive health
 
 ```TODO```

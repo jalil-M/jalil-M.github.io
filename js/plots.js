@@ -18,6 +18,14 @@ function capitalizeFirst(s) {
         return s;
 }
 
+function capitalizeWords(s) {
+    return s.toLowerCase().split(" ").map(capitalizeFirst).join(" ");
+}
+
+function sum(seq) {
+    return seq.map(s => parseInt(s)).reduce((a, b) => a + b, 0);
+}
+
 function fixed(layout) {
     if(!layout.xaxis) {
         layout.xaxis = {}
@@ -47,13 +55,11 @@ function stackedPurchases(filename, divId, title, xlabel) {
             const trace = {
                 x: keys,
                 y: values,
-                name: row.product,
+                name: capitalizeWords(row.product),
                 type: 'bar'
             };
             data.push(trace);
         });
-
-        console.log(data);
 
         const layout = {
             barmode: 'stack',
@@ -223,3 +229,154 @@ Plotly.d3.csv(file('ply_ingredients_tsne.csv'), (err, rows) => {
 
     });
 });
+
+
+function nutritionGrade(filename, columns, columnTitles, divId, title, colors) {
+    Plotly.d3.csv(file(filename), (err, rows) => {
+
+        const data = [];
+        for(let i = 0; i < columns.length; i++) {
+            const column = columns[i], columnTitle = columnTitles[i], color = colors[i];
+            const total = rows.map(r => parseInt(r[column])).reduce((a, b) => a + b, 0);
+            const entry = {
+                x: rows.map(r => capitalizeFirst(r.grade)),
+                y: rows.map(r => r[column] / total),
+                name: columnTitle,
+                type: 'bar',
+                marker: {
+                    color: color
+                }
+            };
+            data.push(entry);
+        }
+
+        const layout = {
+            title: {
+                text: title
+            },
+            xaxis: {
+                title: {
+                    text: 'Nutrition Grade'
+                }
+            },
+            yaxis: {
+                title: {
+                    text: 'Products'
+                },
+                tickformat: ',.0%'
+            }
+        };
+
+        Plotly.newPlot(divId, data, fixed(layout), plyConfig);
+    });
+}
+
+const nutritionGradeColors1 = ['rgb(33,127,192)', 'rgb(233,81,37)'];
+const nutritionGradeColors2 = ['rgb(72,180,178)', 'rgb(255,77,55)'];
+
+nutritionGrade('jalil/ply_nutrition_grade_e250_world.csv', ['count_world'], ['World'], 'grade-e250-world', 'Grade distribution for E250 additive in the world', nutritionGradeColors1);
+
+nutritionGrade('jalil/ply_nutrition_grade_dangerous_additives.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-dangerous-additives', 'Grade distribution for dangerous additives', nutritionGradeColors1);
+
+nutritionGrade('jalil/ply_nutrition_grade_non_additives.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-non-additives', 'Grade distribution for non-additives', nutritionGradeColors1);
+
+Plotly.d3.csv(file('jalil/ply_average_additives_country.csv'), (err, rows) => {
+
+    const data = [{
+        type: 'choropleth',
+        locationmode: 'country names',
+        locations: rows.map(r => capitalizeWords(r.country)),
+        z: rows.map(r => r.average),
+        autocolorscale: true
+    }];
+
+    const layout = {
+        title: 'Average number of additives per product by country',
+        geo: {
+            projection: {
+                scope: 'world'
+            }
+        }
+    };
+
+    Plotly.newPlot('top-country-additives', data, fixed(layout), plyConfig);
+});
+
+Plotly.d3.csv(file('jalil/ply_distribution_average_additives_product.csv'), (err, rows) => {
+
+    const total = sum(rows.map(r => r.count));
+
+    const data = [{
+        x: rows.map(r => r.additives),
+        y: rows.map(r => r.count / total),
+        type: 'scatter'
+    }];
+
+    const layout = {
+        title: 'Average number of additives per product by country',
+        xaxis: {
+            title: {
+                text: 'Number of additives'
+            }
+        },
+        yaxis: {
+            type: 'log',
+            autorange: true,
+            title: {
+                text: 'Products',
+            },
+            tickformat: ',.3%'
+        }
+    };
+
+    Plotly.newPlot('additives-per-product', data, fixed(layout), plyConfig);
+});
+
+Plotly.d3.csv(file('jalil/ply_top_additives.csv'), (err, rows) => {
+
+    const total = sum(rows.map(r => r.count));
+
+    const colors = {
+        colouring: 'rgb(255,60,121)',
+        emulsifier: 'rgb(84,171,218)',
+        preservatives: 'rgb(137,189,52)',
+        antioxidants: 'rgb(101,76,181)',
+        other: 'rgb(120,119,114)'
+    };
+
+
+
+    const data = [{
+        x: rows.map(r => r.additive),
+        y: rows.map(r => r.count / total),
+        type: 'bar',
+        marker: {
+            color: rows.map(r => colors[r.color])
+        },
+        text: rows.map(r => capitalizeFirst(r.color))
+    }];
+
+    const layout = {
+        title: 'Top additives',
+        xaxis: {
+            title: {
+                text: 'Additive'
+            }
+        },
+        yaxis: {
+            title: {
+                text: 'Products',
+            },
+            tickformat: ',.0%'
+        }
+    };
+
+    Plotly.newPlot('top-additives', data, fixed(layout), plyConfig);
+});
+
+
+nutritionGrade('jalil/ply_nutrition_grade_allergens.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-allergens', 'Grade distribution for allergens', nutritionGradeColors1);
+
+nutritionGrade('jalil/ply_nutrition_grade_non_allergens.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-non-allergens', 'Grade distribution for non-allergens', nutritionGradeColors1);
+
+nutritionGrade('jalil/ply_nutrition_grade_palm_oil.csv', ['count_non_palm_oil', 'count_palm_oil'], ['No palm oil', 'Palm oil'], 'palm-oil', 'Grade distribution for palm oil products', nutritionGradeColors2);
