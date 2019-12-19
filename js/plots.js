@@ -287,7 +287,8 @@ Plotly.d3.csv(file('ply_average_additives_country.csv'), (err, rows) => {
         locationmode: 'country names',
         locations: rows.map(r => capitalizeWords(r.country)),
         z: rows.map(r => r.average),
-        autocolorscale: true
+        colorscale: 'Hot',
+        reversescale: true
     }];
 
     const layout = {
@@ -309,7 +310,8 @@ Plotly.d3.csv(file('ply_distribution_average_additives_product.csv'), (err, rows
     const data = [{
         x: rows.map(r => r.additives),
         y: rows.map(r => r.count / total),
-        type: 'scatter'
+        type: 'scatter',
+        fill: 'tozeroy'
     }];
 
     const layout = {
@@ -380,3 +382,26 @@ nutritionGrade('ply_nutrition_grade_allergens.csv', ['count_world', 'count_us'],
 nutritionGrade('ply_nutrition_grade_non_allergens.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-non-allergens', 'Grade distribution for non-allergens', nutritionGradeColors1);
 
 nutritionGrade('ply_nutrition_grade_palm_oil.csv', ['count_non_palm_oil', 'count_palm_oil'], ['No palm oil', 'Palm oil'], 'palm-oil', 'Grade distribution for palm oil products', nutritionGradeColors2);
+
+Plotly.d3.csv(file('ply_average_palm_oil_country.csv'), (err, rows) => {
+
+    const data = [{
+        type: 'choropleth',
+        locationmode: 'country names',
+        locations: rows.map(r => capitalizeWords(r.country)),
+        z: rows.map(r => r.average),
+        colorscale: 'Hot',
+        reversescale: true
+    }];
+
+    const layout = {
+        title: 'Average number of products with palm oil per product by country',
+        geo: {
+            projection: {
+                scope: 'world'
+            }
+        }
+    };
+
+    Plotly.newPlot('top-country-palm-oil', data, fixed(layout), plyConfig);
+});
