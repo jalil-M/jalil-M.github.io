@@ -186,11 +186,16 @@ Plotly.d3.csv(file('ply_ingredients_tsne.csv'), (err, rows) => {
 
     const colorHighlighted = 'rgba(255,62,94, 0.7)', colorHidden = 'rgba(179,179,179,0.25)';
 
+    function getQuery() {
+        return $('#query-text').val().toLowerCase();
+    }
+    const initialQuery = getQuery();
+
     const points = {
         x: rows.map(r => parseFloat(r.x)),
         y: rows.map(r => parseFloat(r.y)),
         text: rows.map(r => r.name),
-        marker: { color: colorHighlighted, size: 5 },
+        marker: { color: rows.map(r => r.name.toLowerCase().includes(initialQuery) ? colorHighlighted : colorHidden), size: 5 },
         mode: 'markers',
         type: 'scatter',
         hoverinfo: 'text'
@@ -222,12 +227,12 @@ Plotly.d3.csv(file('ply_ingredients_tsne.csv'), (err, rows) => {
 
     Plotly.newPlot('products-ingredients', data, fixed(layout), plyConfig).then(gd => {
         $("#query-form").submit(function(e) {
-            const query = $('#query-text').val().toLowerCase();
+            const query = getQuery();
             Plotly.restyle(gd, { 'marker.color': [rows.map(r => r.name.toLowerCase().includes(query) ? colorHighlighted : colorHidden)] });
             e.preventDefault(); // Cancel event
         });
-
     });
+
 });
 
 
@@ -346,8 +351,6 @@ Plotly.d3.csv(file('ply_top_additives.csv'), (err, rows) => {
         other: 'rgb(120,119,114)'
     };
 
-
-
     const data = [{
         x: rows.map(r => r.additive),
         y: rows.map(r => r.count / total),
@@ -395,7 +398,7 @@ Plotly.d3.csv(file('ply_average_palm_oil_country.csv'), (err, rows) => {
     }];
 
     const layout = {
-        title: 'Average number of products with palm oil per product by country',
+        title: 'Average number of products with palm oil by country',
         geo: {
             projection: {
                 scope: 'world'
@@ -405,3 +408,4 @@ Plotly.d3.csv(file('ply_average_palm_oil_country.csv'), (err, rows) => {
 
     Plotly.newPlot('top-country-palm-oil', data, fixed(layout), plyConfig);
 });
+

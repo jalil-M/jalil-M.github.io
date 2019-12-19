@@ -20,7 +20,7 @@ layout: default
 
 <div style="text-align: center; margin-top: 20px">
 <form action="#" id="query-form" style="display: inline-block">
-  Keyword query: <input type="text" name="query" id="query-text">
+  Keyword query: <input type="text" name="query" id="query-text" value="ice cream">
   <input type="submit" value="Highlight">
 </form>
 </div>
