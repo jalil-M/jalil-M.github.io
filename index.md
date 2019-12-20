@@ -137,4 +137,13 @@ While the United States are represented as not using much palm oil, it turns out
 
 # Impact of social status on nutritive health
 
-```TODO```
+<table class="mini">
+<thead>
+<tr><th>-15K</th><th>015-024K</th><th>025-034K</th><th>035-049K</th><th>050-074K</th><th>075-099K</th><th>100-124K</th><th>125-149K</th><th>150-174K</th><th>175-199K</th><th>200-249K</th><th>250K+</th></tr>
+</thead>
+<tbody>
+<tr><td>D</td><td>D</td><td>D</td><td>C</td><td>C</td><td>C</td><td>B</td><td>C</td><td>A</td><td>A</td><td>A</td><td>D</td></tr>
+</tbody>
+</table>
+
+<div id="income-radar"></div>

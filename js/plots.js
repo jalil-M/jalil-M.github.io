@@ -38,6 +38,10 @@ function fixed(layout) {
     return layout;
 }
 
+function deepCopy(obj) {
+    return JSON.parse(JSON.stringify(obj));
+}
+
 // === Plots ===
 
 Plotly.d3.text(file('ply_income_sales.csv'), text => {
@@ -52,6 +56,8 @@ Plotly.d3.text(file('ply_income_sales.csv'), text => {
     }];
 
     const layout = {
+        width: 500,
+        height: 240,
         title: {
             text: 'Correlation between income and spendings'
         },
@@ -353,10 +359,6 @@ Plotly.d3.csv(file('ply_nutrition_grade.csv'), (err, rows) => {
         }
     };
 
-    function deepCopy(obj) {
-        return JSON.parse(JSON.stringify(obj));
-    }
-
     Plotly.newPlot('nutrition-grade', deepCopy(allData[0][0]), fixed(layout), plyConfig).then(gd => {
         function update() {
             const selectionQuantifier = parseInt(quantifierSelect.val()), selectionCategory = parseInt(categorySelect.val());
@@ -492,3 +494,46 @@ Plotly.d3.csv(file('ply_average_palm_oil_country.csv'), (err, rows) => {
     Plotly.newPlot('top-country-palm-oil', data, fixed(layout), plyConfig);
 });
 
+Plotly.d3.csv(file('ply_income_radar.csv'), (err, rows) => {
+    const columns = {
+        energy_100g: 'Energy',
+        fat_100g: 'Fat',
+        carbohydrates_100g: 'Carbohydrates',
+        proteins_100g: 'Proteins'
+    };
+
+    const data = [];
+
+    for(let i = 0; i < rows.length; i += 2) {
+        const row = rows[i];
+        const labels = [], values = [];
+
+        for(let col in columns) {
+            labels.push(columns[col]);
+            values.push(row[col]);
+        }
+        labels.push(labels[0]);
+        values.push(values[0]);
+        const layer = {
+            type: 'scatterpolar',
+            r: values,
+            theta: labels,
+            fill: false,
+            name: row.income
+        };
+
+        data.push(layer);
+    }
+
+    const layout = {
+        title: 'Radar',
+        polar: {
+            radialaxis: {
+                visible: false,
+            }
+        },
+        //grid: {rows: 4, columns: 3, pattern: 'independent'}
+    };
+
+    Plotly.newPlot('income-radar', data, fixed(layout), plyConfig);
+});
