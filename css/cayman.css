@@ -193,3 +193,77 @@ a:hover { text-decoration: underline; }
 p {
     text-align: justify;
 }
+
+.toc {
+    padding: 0;
+}
+
+.toc li {
+    display: flex;
+}
+
+.toc li .title {
+    order: 1;
+}
+
+.toc li .chapter {
+    order: 3;
+}
+
+.toc li::after {
+    content: "";
+    border-bottom: 1px dotted;
+    flex-grow: 1;
+    order: 2;
+}
+
+.right {
+    margin-left: 30px;
+}
+
+.li-bold {
+    font-weight: bold;
+}
+
+/* Begin arrow scroll */
+#button {
+    display: inline-block;
+    background-color: #4d4d4d;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 25px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s,
+    opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    text-decoration:none
+}
+#button::after {
+    content: "↑";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+}
+#button:hover {
+    cursor: pointer;
+    background-color: #333;
+}
+#button:active {
+    background-color: #555;
+}
+#button.show {
+    opacity: 1;
+    visibility: visible;
+}
+/* End arrow scroll */
+
+.page-header {
+    border-bottom: solid #d6d6d6 1px;
+}

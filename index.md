@@ -2,6 +2,47 @@
 layout: default
 ---
 
+# Table of contents
+
+<ul class="toc">
+    <li class="li-bold">
+        <a href="#overview"><span class="title">Overview</span></a>
+        <span class="chapter"></span>
+    </li>
+    <li class="li-bold">
+        <a href="#"><span class="title">Social status and product consumption</span></a>
+        <span class="chapter">A</span>
+    </li>
+    <li>
+        <a href="#"><span class="title right">?</span></a>
+        <span class="chapter">A.?</span>
+    </li>
+    <li class="li-bold">
+        <a href="#"><span class="title">Healthiness of food</span></a>
+        <span class="chapter">B</span>
+    </li>
+    <li>
+        <a href="#"><span class="title right">What is our food made out of?</span></a>
+        <span class="chapter">B.1</span>
+    </li>
+    <li>
+        <a href="#"><span class="title right">Is the nutritive grading scheme relevant?</span></a>
+        <span class="chapter">B.2</span>
+    </li>
+    <li>
+        <a href="#"><span class="title right">?</span></a>
+        <span class="chapter">B.3</span>
+    </li>
+    <li class="li-bold">
+        <a href="#"><span class="title">Impact of social status on nutritive health</span></a>
+        <span class="chapter">C</span>
+    </li>
+    <li>
+        <a href="#"><span class="title right">?</span></a>
+        <span class="chapter">C.?</span>
+    </li>
+</ul>
+
 # Overview
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
