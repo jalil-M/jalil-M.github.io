@@ -76,15 +76,15 @@ In fact, there is a high correlation between the income and the total price of f
 
 ## Social Status VS Food types
 
+If there is a disparity of food consumption between social classes, we expect to find there are some products that are much more consumed by certain households than others.
+
 <div id="purchases-income"></div>
+
+Naturally there are some products that are common to all social classes, which can be qualified as essential needs. These include bananas, milk, eggs and bread.<br>
+There also some food products that can be qualified as specific to a social class, since they are much more consumed in one than the others. For example, strawberries seem to be specific to household with high income, we can clearly see that their consumption grows higher with the wealth level of the households. The opposite effect can be observed for Hamburger Buns, which are more consumed in low income households than in the ones with higher income.
 
 <div id="purchases-age"></div>
 
-<div id="purchases-marital"></div>
-
-
-Naturally there are some products that are common to all social classes, which can be qualified as essential needs. These include bananas, milk, eggs and bread.<br>
-There also some food products that can be qualified as specific to a social class, since they are much more consumed in one than the others. For example, strawberries seem to be specific to household with high income, we can clearly see that their consumption grows higher with the wealth level of the households. The opposite effect can be observed for Hamburger Buns, which are more consumed in low income households than in the ones with higher income.<br>
 Using the age as the indicator, Soft Drinks seem to be consumed more by young individuals than by older ones. Also there seems to be a disparity in consumption of essential needs. The consumption of healthy products such as fruits, vegetables and protein rich foods increases with the age. In the same sense, the higher the age category of the household is,  the lower is the consumption of unhealthy products.
 
 
