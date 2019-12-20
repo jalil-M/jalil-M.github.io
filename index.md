@@ -24,16 +24,12 @@ layout: default
         <span class="chapter">B</span>
     </li>
     <li>
-        <a href="#"><span class="title right">What is our food made out of?</span></a>
+        <a href="#"><span class="title right">What's in our food?</span></a>
         <span class="chapter">B.1</span>
     </li>
     <li>
-        <a href="#"><span class="title right">Is the nutritive grading scheme relevant?</span></a>
+        <a href="#"><span class="title right">How relevant is the nutritive grade?</span></a>
         <span class="chapter">B.2</span>
-    </li>
-    <li>
-        <a href="#"><span class="title right">?</span></a>
-        <span class="chapter">B.3</span>
     </li>
     <li class="li-bold">
         <a href="#"><span class="title">Impact of social status on nutritive health</span></a>
@@ -53,7 +49,7 @@ You just woke up from your so you open your laptop, and start reading about thes
 	- What defines one household's social status?
 	- What are the popular key components of our healthiness?
 	- Is there a correlation between food consumption and social status?
-	- And...what's on BC cafeteria's menu? (looking at food datasets made you hungry...)
+	- ...what's on BC cafeteria's menu? (looking at food datasets made you hungry...)
 
 But most importantly, this young data scientist is on verge of having answers to these questions. In fact, this data story will unveil the many analysis and discoveries from our data scientist, through these two datasets (Dunnhummby, and Open Food Facts Databases).
 Welcome to a typical day of a DLAB scientist...     
@@ -74,7 +70,7 @@ What is our food made of? How is unhealthy food characterized? Are there any foo
 
 Those are the questions we asked ourselves. To answer them we analyzed data from the [Open Food Facts](https://openfoodfacts.org) database, where we aggregated hundred of thousands of products.
 
-## What is our food made out of?
+## What's in our food?
 
 Product labeling plays an important in informing the client about what they are about to consume. All countries have a regulation regarding food labeling, some are more less transparent than others.
 
@@ -104,7 +100,7 @@ This visualization shows us that names of the products are highly correlated wit
 
 In some country and states, it is mendatory to give the detailed quantity of salt, sugar, fat and proteins. These informations give us a more accurate insight about the healthiness. For instance here is an interesting property: if a product contains sugar it is likely to either not contain fat at all (sweets) or contain an equivalent amount of fat.
 
-## Is the nutritive grading scheme relevant?
+## How relevant is the nutritive grade?
 
 The _nutri-score_ is an attributed score for a given food product based on the amount of energy, saturated fat, sugar and sodium contained in it. The goal is to inform the consumer about the _nutritive value_. It does not take into account harmful additives!
 

@@ -275,7 +275,7 @@ Plotly.d3.csv(file('ply_nutrition_grade.csv'), (err, rows) => {
             for (let j = 0; j < scope.length; j++) {
                 const column = quantifier + '_' + variable + '_' + scope[j];
                 const total = rows.map(r => parseInt(r[column])).reduce((a, b) => a + b, 0);
-
+                const z = 1.96;
                 const entry = {
                     x: rows.map(r => capitalizeFirst(r.grade)),
                     y: rows.map(r => parseInt(r[column]) / total),
@@ -287,6 +287,14 @@ Plotly.d3.csv(file('ply_nutrition_grade.csv'), (err, rows) => {
                             color: 'rgb(244, 55, 56)',
                             width: j > 0 ? 3 : 0
                         }
+                    },
+                    error_y: {
+                        type: 'data',
+                        array: rows.map(r => {
+                            const p = parseInt(r[column]) / total;
+                            return z * Math.sqrt(p * (1 - p) / total)
+                        }),
+                        visible: true
                     }
                 };
                 tData.push(entry);
