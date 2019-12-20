@@ -2,9 +2,7 @@
 layout: default
 ---
 
-# Table of contents
-
-<ul class="toc">
+<ul class="toc hidden" id="toc">
     <li class="li-bold">
         <a href="#overview"><span class="title">Overview</span></a>
         <span class="chapter"></span>
@@ -79,11 +77,11 @@ The social status is a subjective characterization of a household. It can be rel
 <div id="income-sales"></div>
 
 Let us first take a look at the correlations between the social status of households and the prices of the food products consumed.
-In fact, there is a high correlation between the income and the total price of foods bought. Indeed, households with a low income seem to buy in general in general cheap food products. Also, the higher the income, the higher is the budget allocated by the household to food consumption, and the higher the average price paid per product is. Households with an income higher than 125K dollars are the ones that pay the most for food and seem to buy expensive products, whilst households with an income lower than 50K dollars tend to pay a lot less and go for cheaper products.
+In fact, there is a high correlation between the income and the total price of foods bought. Indeed, households with a low income seem to buy in general in general cheap food products. Also, the higher the income, the higher is the budget allocated by the household to food consumption, and the higher the average price paid per product is. Households with an income higher than $125,000 dollars are the ones that pay the most for food and seem to buy expensive products, whilst households with an income lower than $50,000 dollars tend to pay a lot less and go for cheaper products.
 
 ## Social Status VS Food types
 
-If there is a disparity of food consumption between social classes, we expect to find there are some products that are much more consumed by certain households than others.
+If there is a disparity of food consumption between social classes, we expect to find that there are some products that are much more consumed by certain households than others.
 
 <div id="purchases-income"></div>
 
