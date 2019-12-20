@@ -4,6 +4,8 @@ layout: default
 
 # Table of contents
 
+`TODO: add the links when all parts are fixed`
+
 <ul class="toc">
     <li class="li-bold">
         <a href="#overview"><span class="title">Overview</span></a>
@@ -49,12 +51,14 @@ Imagine you are a young data scientist, working at the DLAB and Bob West enters 
 You just woke up from your so you open your laptop, and start reading about these datasets and then you ask yourself :
 
 	- What defines one household's social status?
-	- What are the popular key components of our healthiness ?
-	- Is there a correlation between food consumption and social status ?
-	- And...What is on BC cafeteria's menu ? (looking at food datasets made you hungry...)
+	- What are the popular key components of our healthiness?
+	- Is there a correlation between food consumption and social status?
+	- And...what's on BC cafeteria's menu? (looking at food datasets made you hungry...)
 
 But most importantly, this young data scientist is on verge of having answers to these questions. In fact, this data story will unveil the many analysis and discoveries from our data scientist, through these two datasets (Dunnhummby, and Open Food Facts Databases).
 Welcome to a typical day of a DLAB scientist...     
+
+**Side note:** all our plots are dynamic, feel free to interact with them! It is recommended to use a modern browser on a non-mobile device.
 
 # Social status and product consumption
 
@@ -104,20 +108,34 @@ In some country and states, it is mendatory to give the detailed quantity of sal
 
 The _nutri-score_ is an attributed score for a given food product based on the amount of energy, saturated fat, sugar and sodium contained in it. The goal is to inform the consumer about the _nutritive value_. It does not take into account harmful additives!
 
+Because the value of this score is computed by following strict rules, it should technically reflect the same thing in different countries. Right?
+
 <div style="text-align: center; margin-top: 20px">
     <select name="grade-quantifier-select" id="grade-quantifier-select"></select><select name="grade-category-select" id="grade-category-select"></select>
 </div>
 <div id="nutrition-grade"></div>
 
-
+Well, it seems that the United States have better grades for product containing a lot of additives, compared to the world distribution. Why so? One possible explanation being the lack of transparency, in fact corporations there are not obliged to write all the ingredients thus affecting our scoring system.
 
 <div id="top-country-additives"></div>
 
+Still, if we have a broader look at the data we can clearly see that North America in general tends to sell products with a lot of additives, as opposed to Europe.
+
 <div id="additives-per-product"></div>
+
+Moreover the number of additives per product follows very accurately an exponential distribution. There even exists a product which contains 38 known additives. Yuck!
+
+Before going further, let's clarify the term "additive". A food additive is an added substance to preserve flavor, enhance its taste, appearance, or other qualities. Not all additives are synthetic, in fact some of them have been naturally used for centuries such as salt or vinegar. However not all additives are completely safe for us, as for `E250`.
 
 <div id="top-additives"></div>
 
+The above depicts the distribution of additives among products around the world. Most of them are emulsifiers, food colouring and preservatives.
+
+What about dangerous ingredients such as palm oil?
+
 <div id="top-country-palm-oil"></div>
+
+While the United States are represented as not using much palm oil, it turns out they simply have a different _name_ for it: "vegetal oil"!
 
 # Impact of social status on nutritive health
 
