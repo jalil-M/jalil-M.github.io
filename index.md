@@ -173,22 +173,33 @@ While the United States and Australia are represented as not using much palm oil
 </tbody>
 </table>
 
+<table class="mini">
+<thead>
+<tr><th>19-24</th><th>25-34</th><th>35-44</th><th>45-54</th><th>55-64</th><th>65+</th></tr>
+</thead>
+<tbody>
+<tr><td>D</td><td>D</td><td>D</td><td>C</td><td>D</td><td>C</td></tr>
+</tbody>
+</table>
+
 <div id="income-radar"></div>
 
 <div id="age-radar"></div>
 
+<div id="correlation-grades"></div>
+
 # Conclusion
 
-What a journey our DLAB scientist has lived ! <br>
+What a journey our DLAB scientist has lived! <br>
 
 Food consumption is at the heart of many debates : the human race has always centered its attention toward this basic need which defines us.<br>
 During this study, we finally established a connection between social status and food consumption. There is now a clear common trend between wealthiness and healthiness.<br>
 But this trend truly highlights the fact that cultures from around the world and especially the United States will share common food consumption trends in regards to this perpetual need of health, which means : less additives, less palm oil... less excess to sum it up!<br>
 
 For further work, it would be great to have access to a database similar to `dunnhumby` but applied to more retailers from around the world. Naturally, we also want more data in the `Open-Food-Facts` Database in order to apply some of our previous analysis techniques on many more countries previously ignored because of a lack of data.<br>
-Most importantly, some fresh ideas could be applied in this study, by finding a more **"social"** database that could identify patterns between any social network (friends, family, political orientation, religion etc...) and our daily food consumption in order to have a more comprehensive and broad point of view !
+Most importantly, some fresh ideas could be applied in this study, by finding a more **"social"** database that could identify patterns between any social network (friends, family, political orientation, religion etc...) and our daily food consumption in order to have a more comprehensive and broad point of view!
 
-In fact, being a DLAB scientist for a day was truly an amazing journey, and left us with some "food for taughts" ;) !   
+In fact, being a DLAB scientist for a day was truly an amazing journey, and left us with some "food for taughts" ;)!   
  
 
 

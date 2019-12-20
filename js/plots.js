@@ -527,7 +527,7 @@ Plotly.d3.csv(file('ply_income_radar.csv'), (err, rows) => {
     }
 
     const layout = {
-        title: 'Radar',
+        title: 'Ratio for macro nutrients in terms of income',
         polar: {
             radialaxis: {
                 visible: false,
@@ -571,7 +571,7 @@ Plotly.d3.csv(file('ply_age_radar.csv'), (err, rows) => {
     }
 
     const layout = {
-        title: 'Radar',
+        title: 'Ratio for macro nutrients in terms of age',
         polar: {
             radialaxis: {
                 visible: false,
@@ -583,28 +583,24 @@ Plotly.d3.csv(file('ply_age_radar.csv'), (err, rows) => {
     Plotly.newPlot('age-radar', data, fixed(layout), plyConfig);
 });
 
-/*Plotly.d3.text(file('ply_correlation_grades.csv'), text => {
+Plotly.d3.text(file('ply_correlation_grades.csv'), text => {
     const rows = Plotly.d3.csv.parseRows(text);
 
     const array = rows.map(row => row.slice(1).map(v => parseFloat(v))).slice(1);
+    const header = rows[0].slice(1).map(s => capitalizeWords(s.replace('_', ' ')));
 
     const data = [{
-        x: rows.slice(1).map(r => r[0]),
-        y: ['Mean Product Price', 'Total Food Budget'],
-        z: array[0].map((col, i) => array.map(row => row[i])),
+        x: header,
+        y: header,
+        z: array,
         type: 'heatmap'
     }];
 
     const layout = {
-        width: 500,
-        height: 500,
+        width: 600,
+        height: 600,
         title: {
-            text: 'Correlation between income and spendings'
-        },
-        xaxis: {
-            title: {
-                text: 'Income'
-            }
+            text: 'Correlation between age, income and healthiness'
         },
         yaxis: {
             autorange: 'reversed'
@@ -614,5 +610,5 @@ Plotly.d3.csv(file('ply_age_radar.csv'), (err, rows) => {
         }
     };
 
-    Plotly.newPlot('income-sales', data, fixed(layout), plyConfig);
-});*/
+    Plotly.newPlot('correlation-grades', data, fixed(layout), plyConfig);
+});
