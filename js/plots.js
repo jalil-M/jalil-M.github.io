@@ -73,8 +73,9 @@ function stackedPurchases(filename, divId, title, xlabel) {
             },
             yaxis: {
                 title: {
-                    text: 'Purchases count per household'
-                }
+                    text: 'Purchases per household'
+                },
+                tickformat: ',.2%'
             }
         };
 
