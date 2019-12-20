@@ -4,46 +4,53 @@ layout: default
 
 # Table of contents
 
-`TODO: add the links when all parts are fixed`
-
 <ul class="toc">
     <li class="li-bold">
         <a href="#overview"><span class="title">Overview</span></a>
         <span class="chapter"></span>
     </li>
     <li class="li-bold">
-        <a href="#"><span class="title">Social status and product consumption</span></a>
+        <a href="#social-status-and-product-consumption"><span class="title">Social status and product consumption</span></a>
         <span class="chapter">A</span>
     </li>
     <li>
-        <a href="#"><span class="title right">?</span></a>
-        <span class="chapter">A.?</span>
+        <a href="#what-defines-social-status"><span class="title right">What defines social status?</span></a>
+        <span class="chapter">A.1</span>
+    </li>
+    <li>
+        <a href="#social-status-vs-food-retail"><span class="title right">Social Status VS Food Retail</span></a>
+        <span class="chapter">A.2</span>
+    </li>
+    <li>
+        <a href="#social-status-vs-food-types"><span class="title right">Social Status VS Food types</span></a>
+        <span class="chapter">A.3</span>
     </li>
     <li class="li-bold">
-        <a href="#"><span class="title">Healthiness of food</span></a>
+        <a href="#healthiness-of-food"><span class="title">Healthiness of food</span></a>
         <span class="chapter">B</span>
     </li>
     <li>
-        <a href="#"><span class="title right">What's in our food?</span></a>
+        <a href="#whats-in-our-food"><span class="title right">What's in our food?</span></a>
         <span class="chapter">B.1</span>
     </li>
     <li>
-        <a href="#"><span class="title right">How relevant is the nutritive grade?</span></a>
+        <a href="#how-relevant-is-the-nutritive-grade"><span class="title right">How relevant is the nutritive grade?</span></a>
         <span class="chapter">B.2</span>
     </li>
     <li class="li-bold">
-        <a href="#"><span class="title">Impact of social status on nutritive health</span></a>
+        <a href="#impact-of-social-status-on-nutritive-health"><span class="title">Impact of social status on nutritive health</span></a>
         <span class="chapter">C</span>
     </li>
     <li>
-        <a href="#"><span class="title right">?</span></a>
-        <span class="chapter">C.?</span>
+        <a href="#how-healthy-does-each-class-eat"><span class="title right">How healthy does each class eat?</span></a>
+        <span class="chapter">C.1</span>
     </li>
 </ul>
 
+
 # Overview
 
-Imagine you are a young data scientist, working at the DLAB and Bob West enters your office without warning and shouts "we received two datasets related to food consumption ! get to work !" and slams the door.
+Imagine you are a young data scientist, working at the DLAB and Bob West enters your office without warning and shouts "we received two datasets related to food consumption! get to work!" and slams the door.
 You just woke up from your nap so you open your laptop, and start reading about these datasets. Naturally, you ask yourself :
 
 	- What defines one household's social status?
@@ -52,17 +59,17 @@ You just woke up from your nap so you open your laptop, and start reading about 
 	- ...what's on BC cafeteria's menu? (looking at food datasets made you hungry...)
 
 But most importantly, this young data scientist is on the verge of having answers to these questions. In fact, this data story will unveil the many analysis and discoveries from our data scientist, through these two datasets (Dunnhummby, and Open Food Facts Databases).<br>
-Welcome to a typical day of a DLAB scientist, and this scientist, it is you !     
+Welcome to a typical day of a DLAB scientist, and this scientist, it is you!     
 
 **Side note:** all our plots are dynamic, feel free to interact with them! It is recommended to use a modern browser on a non-mobile device.
 
 # Social status and product consumption
 
-They say there is no accounting for taste. Each one of us has a favoured nutrition routine, some are big on healthy food. Others are foody and like to serve their palates with as many types of meals as they can. And a lot of us choose to indulge guilty pleasures and disregard how healthy they eat. But what if this isn’t really a choice ? What if our social status predetermines the way we eat ?
+They say there is no accounting for taste. Each one of us has a favoured nutrition routine, some are big on healthy food. Others are foody and like to serve their palates with as many types of meals as they can. And a lot of us choose to indulge guilty pleasures and disregard how healthy they eat. But what if this isn’t really a choice? What if our social status predetermines the way we eat?
 
 In this article, we analyse the relation between the social status of household and their food consumption habits. We aim to verify if there is an impact of social class on the quality of nutrition, and if so to which extent.
 
-## What defines social status ?
+## What defines social status?
 
 The social status is a subjective characterization of a household. It can be related to its wealth, the professional status of a member, the age category, etc. In this analysis, we choose to define the social status using three indicators the income of the household, its age category, as well as the marital status.
 
@@ -109,8 +116,6 @@ As one could expect the three top ingredients are salt, sugar and water. About 1
 What are the combinations of these ingredients? The above plot represents the [phi coefficient](https://en.wikipedia.org/wiki/Phi_coefficient) between each pair of ingredients, a statistical measure of association between two binary variables. For instance, it seems that garlic often comes with other spices, vinegar often combined with food flavoring, and corn syrup with additional sugar. On the other hand salt is less likely to be included with sugar or ascorbic acid. 
 
 Finally, it turns out we can actually characterize food products by only looking at their ingredients. Below you may find the **_map of food_**, a spatial representation of products by their similarity in terms of ingredients. Use the query field to highlight products by their name: `chocolate`, `soda`, `fruit`, `cheese`, ...
-
-**Feel free to play with it !**
 
 <div style="text-align: center; margin-top: 20px">
 <form action="#" id="query-form" style="display: inline-block">
