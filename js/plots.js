@@ -124,7 +124,7 @@ stackedPurchases('ply_purchases_income.csv', 'purchases-income', 'Amount of purc
 
 stackedPurchases('ply_purchases_age.csv', 'purchases-age', 'Amount of purchases of most common foods in terms of age', 'Household age');
 
-stackedPurchases('ply_purchases_marital.csv', 'purchases-marital', 'Amount of purchases of most common foods in terms of marital status', 'Household marital status');
+//stackedPurchases('ply_purchases_marital.csv', 'purchases-marital', 'Amount of purchases of most common foods in terms of marital status', 'Household marital status');
 
 // ----
 
