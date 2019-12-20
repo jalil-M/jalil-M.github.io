@@ -58,6 +58,8 @@ Welcome to a typical day of a DLAB scientist...
 
 # Social status and product consumption
 
+<div id="income-sales"></div>
+
 <div id="purchases-income"></div>
 
 <div id="purchases-age"></div>

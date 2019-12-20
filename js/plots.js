@@ -40,6 +40,37 @@ function fixed(layout) {
 
 // === Plots ===
 
+Plotly.d3.text(file('ply_income_sales.csv'), text => {
+    const rows = Plotly.d3.csv.parseRows(text);
+    const array = rows.map(row => row.slice(1).map(v => parseFloat(v))).slice(1);
+
+    const data = [{
+        x: rows.slice(1).map(r => r[0]),
+        y: ['Mean Product Price', 'Total Food Budget'],
+        z: array[0].map((col, i) => array.map(row => row[i])),
+        type: 'heatmap'
+    }];
+
+    const layout = {
+        title: {
+            text: 'Correlation between income and spendings'
+        },
+        xaxis: {
+            title: {
+                text: 'Income'
+            }
+        },
+        yaxis: {
+            autorange: 'reversed'
+        },
+        zaxis: {
+            tickformat: ',.1%'
+        }
+    };
+
+    Plotly.newPlot('income-sales', data, fixed(layout), plyConfig);
+});
+
 function stackedPurchases(filename, divId, title, xlabel) {
     Plotly.d3.csv(file(filename), (err, rows) => {
 
