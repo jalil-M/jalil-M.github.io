@@ -97,13 +97,11 @@ In some country and states, it is mendatory to give the detailed quantity of sal
 
 The _nutri-score_ is an attributed score for a given food product based on the amount of energy, saturated fat, sugar and sodium contained in it. The goal is to inform the consumer about the _nutritive value_. It does not take into account harmful additives!
 
-<div id="grade-e250-world"></div>
+<div style="text-align: center; margin-top: 20px">
+    <select name="grade-quantifier-select" id="grade-quantifier-select"></select><select name="grade-category-select" id="grade-category-select"></select>
+</div>
+<div id="nutrition-grade"></div>
 
-
-
-<div id="grade-dangerous-additives"></div>
-
-<div id="grade-non-additives"></div>
 
 
 <div id="top-country-additives"></div>
@@ -111,12 +109,6 @@ The _nutri-score_ is an attributed score for a given food product based on the a
 <div id="additives-per-product"></div>
 
 <div id="top-additives"></div>
-
-<div id="grade-allergens"></div>
-
-<div id="grade-non-allergens"></div>
-
-<div id="palm-oil"></div>
 
 <div id="top-country-palm-oil"></div>
 

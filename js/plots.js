@@ -237,54 +237,101 @@ Plotly.d3.csv(file('ply_ingredients_tsne.csv'), (err, rows) => {
 });
 
 
-function nutritionGrade(filename, columns, columnTitles, divId, title, colors) {
-    Plotly.d3.csv(file(filename), (err, rows) => {
+Plotly.d3.csv(file('ply_nutrition_grade.csv'), (err, rows) => {
 
+    const nutritionGradeGradient = ['#53783b', '#7b964a', '#b3c656', '#fcdb7e', '#fce198'];
+
+    const quantifiers = ['with', 'without'];
+    const variables = ['additives', 'allergens'];
+    const suffixes = [
+        'dangerous additives',
+        'allergens',
+    ];
+    const scope = ['world', 'us'];
+    const scopeTitles = ['World', 'United States'];
+
+    const quantifierSelect = $('#grade-quantifier-select'), categorySelect = $('#grade-category-select');
+    for(let i = 0; i < quantifiers.length; i++) {
+        quantifierSelect.append(new Option(capitalizeFirst(quantifiers[i]), i))
+    }
+    for(let i = 0; i < suffixes.length; i++) {
+        categorySelect.append(new Option(capitalizeWords(suffixes[i]), i)); // Add option to select
+    }
+
+    const allData = [];
+    const titles = [];
+
+    for (let i = 0; i < variables.length; i++) {
+        const variable = variables[i], suffix = suffixes[i];
         const data = [];
-        for(let i = 0; i < columns.length; i++) {
-            const column = columns[i], columnTitle = columnTitles[i], color = colors[i];
-            const total = rows.map(r => parseInt(r[column])).reduce((a, b) => a + b, 0);
-            const entry = {
-                x: rows.map(r => capitalizeFirst(r.grade)),
-                y: rows.map(r => r[column] / total),
-                name: columnTitle,
-                type: 'bar',
-                marker: {
-                    color: color
-                }
-            };
-            data.push(entry);
-        }
+        const tTitles = [];
+        for(let k = 0; k < quantifiers.length; k++) {
+            const quantifier = quantifiers[k];
+            const title = 'Grade distribution for products ' + quantifier + ' ' + suffix;
+            tTitles.push(title);
+            const tData = [];
 
-        const layout = {
-            title: {
-                text: title
-            },
-            xaxis: {
-                title: {
-                    text: 'Nutrition Grade'
-                }
-            },
-            yaxis: {
-                title: {
-                    text: 'Products'
-                },
-                tickformat: ',.0%'
+            for (let j = 0; j < scope.length; j++) {
+                const column = quantifier + '_' + variable + '_' + scope[j];
+                const total = rows.map(r => parseInt(r[column])).reduce((a, b) => a + b, 0);
+
+                const entry = {
+                    x: rows.map(r => capitalizeFirst(r.grade)),
+                    y: rows.map(r => parseInt(r[column]) / total),
+                    name: scopeTitles[j],
+                    type: 'bar',
+                    marker: {
+                        color: nutritionGradeGradient,
+                        line: {
+                            color: 'rgb(244, 55, 56)',
+                            width: j > 0 ? 3 : 0
+                        }
+                    }
+                };
+                tData.push(entry);
             }
-        };
+            data.push(tData);
+        }
+        titles.push(tTitles);
+        allData.push(data);
+    }
 
-        Plotly.newPlot(divId, data, fixed(layout), plyConfig);
+    const layout = {
+        title: {
+            text: titles[0]
+        },
+        xaxis: {
+            title: {
+                text: 'Nutrition Grade'
+            }
+        },
+        yaxis: {
+            title: {
+                text: 'Products'
+            },
+            tickformat: ',.0%'
+        }
+    };
+
+    function deepCopy(obj) {
+        return JSON.parse(JSON.stringify(obj));
+    }
+
+    Plotly.newPlot('nutrition-grade', deepCopy(allData[0][0]), fixed(layout), plyConfig).then(gd => {
+        function update() {
+            const selectionQuantifier = parseInt(quantifierSelect.val()), selectionCategory = parseInt(categorySelect.val());
+            Plotly.restyle(gd, {
+                'y': deepCopy(allData[selectionCategory][selectionQuantifier].map(r => r.y))
+            }, [0, 1]);
+            Plotly.relayout(gd, {
+                'title.text': titles[selectionCategory][selectionQuantifier]
+            })
+        }
+        quantifierSelect.change(update);
+        categorySelect.change(update);
     });
-}
+});
 
-const nutritionGradeColors1 = ['rgb(33,127,192)', 'rgb(233,81,37)'];
-const nutritionGradeColors2 = ['rgb(72,180,178)', 'rgb(255,77,55)'];
-
-nutritionGrade('ply_nutrition_grade_e250_world.csv', ['count_world'], ['World'], 'grade-e250-world', 'Grade distribution for E250 additive in the world', nutritionGradeColors1);
-
-nutritionGrade('ply_nutrition_grade_dangerous_additives.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-dangerous-additives', 'Grade distribution for dangerous additives', nutritionGradeColors1);
-
-nutritionGrade('ply_nutrition_grade_non_additives.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-non-additives', 'Grade distribution for non-additives', nutritionGradeColors1);
 
 Plotly.d3.csv(file('ply_average_additives_country.csv'), (err, rows) => {
 
@@ -381,11 +428,6 @@ Plotly.d3.csv(file('ply_top_additives.csv'), (err, rows) => {
 });
 
 
-nutritionGrade('ply_nutrition_grade_allergens.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-allergens', 'Grade distribution for allergens', nutritionGradeColors1);
-
-nutritionGrade('ply_nutrition_grade_non_allergens.csv', ['count_world', 'count_us'], ['World', 'United States'], 'grade-non-allergens', 'Grade distribution for non-allergens', nutritionGradeColors1);
-
-nutritionGrade('ply_nutrition_grade_palm_oil.csv', ['count_non_palm_oil', 'count_palm_oil'], ['No palm oil', 'Palm oil'], 'palm-oil', 'Grade distribution for palm oil products', nutritionGradeColors2);
 
 Plotly.d3.csv(file('ply_average_palm_oil_country.csv'), (err, rows) => {
 
