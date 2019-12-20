@@ -48,13 +48,13 @@ layout: default
 Imagine you are a young data scientist, working at the DLAB and Bob West enters your office without warning and shouts "we got two datasets related to food consumption ! do your work !" and slams the door.
 You just woke up from your so you open your laptop, and start reading about these datasets and then you ask yourself :
 
-What defines one household's social status?
-What are the popular key components of our healthiness ?
-Is there a correlation between food consumption and social status ?
-And...
-What is on BC cafeteria's menu ? (looking at food datasets made you hungry...)
+	- What defines one household's social status?
+	- What are the popular key components of our healthiness ?
+	- Is there a correlation between food consumption and social status ?
+	- And...What is on BC cafeteria's menu ? (looking at food datasets made you hungry...)
 
-But most importantly, this young data scientist is on verge of having answers to these questions. In fact, this data story will unveil the many analysis and discoveries from our data scientist, through these two datasets (Dunnhummby, and Open Food Facts Databases).     
+But most importantly, this young data scientist is on verge of having answers to these questions. In fact, this data story will unveil the many analysis and discoveries from our data scientist, through these two datasets (Dunnhummby, and Open Food Facts Databases).
+Welcome to a typical day of a DLAB scientist...     
 
 # Social status and product consumption
 
