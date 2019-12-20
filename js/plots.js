@@ -434,11 +434,11 @@ Plotly.d3.csv(file('ply_top_additives.csv'), (err, rows) => {
     const total = sum(rows.map(r => r.count));
 
     const colors = {
-        colouring: 'rgb(255,60,121)',
+        colouring: 'rgb(255,88,84)',
         emulsifier: 'rgb(84,171,218)',
         preservatives: 'rgb(137,189,52)',
-        antioxidants: 'rgb(101,76,181)',
-        other: 'rgb(120,119,114)'
+        antioxidants: 'rgb(124,103,181)',
+        other: 'rgb(111,120,111)'
     };
 
     const data = [{
