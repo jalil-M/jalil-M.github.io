@@ -60,8 +60,8 @@ layout: default
 
 # Overview
 
-Imagine you are a young data scientist, working at the DLAB and Bob West enters your office without warning and shouts "we received two datasets related to food consumption! get to work!" and slams the door.
-You just woke up from your nap so you open your laptop, and start reading about these datasets. Naturally, you ask yourself :
+Imagine you are a young data scientist, working at the DLAB and Bob West enters in your office without warning and shouts : "we received two datasets related to food consumption! get to work!" and slams the door.
+Consequently, you just woke up from your nap so you open your laptop, and start reading about these datasets. Naturally, you ask yourself :
 
 	- What defines one household's social status?
 	- What are the popular key components of our healthiness?
@@ -176,8 +176,12 @@ While the United States and Australia are represented as not using much palm oil
 
 # Impact of social status on nutritive health
 ## How healthy does each class eat?
-### Social class VS Nutrition grade
+
 Previously, we have seen that there is a relationship between some social status indicators and the choice of food types. Also, we have shown that the budget allocated to food consumption depends on the social status of the household. In this part, we  summarize this by studying the influence of social status on the general nutrition grade of products consumed.
+
+
+### Social class VS Nutrition grade
+
 
 <table class="mini">
 <thead>
