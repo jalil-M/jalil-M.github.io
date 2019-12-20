@@ -135,7 +135,7 @@ What about dangerous ingredients such as palm oil?
 
 <div id="top-country-palm-oil"></div>
 
-While the United States are represented as not using much palm oil, it turns out they simply have a different _name_ for it: "vegetal oil"!
+While the United States are represented as not using much palm oil, it turns out they simply have a different _name_ for it: "vegetable oil"!
 
 # Impact of social status on nutritive health
 
