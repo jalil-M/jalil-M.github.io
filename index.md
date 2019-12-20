@@ -43,40 +43,62 @@ layout: default
 
 # Overview
 
-Imagine you are a young data scientist, working at the DLAB and Bob West enters your office without warning and shouts "we got two datasets related to food consumption ! do your work !" and slams the door.
-You just woke up from your so you open your laptop, and start reading about these datasets and then you ask yourself :
+Imagine you are a young data scientist, working at the DLAB and Bob West enters your office without warning and shouts "we received two datasets related to food consumption ! get to work !" and slams the door.
+You just woke up from your nap so you open your laptop, and start reading about these datasets. Naturally, you ask yourself :
 
 	- What defines one household's social status?
 	- What are the popular key components of our healthiness?
 	- Is there a correlation between food consumption and social status?
 	- ...what's on BC cafeteria's menu? (looking at food datasets made you hungry...)
 
-But most importantly, this young data scientist is on verge of having answers to these questions. In fact, this data story will unveil the many analysis and discoveries from our data scientist, through these two datasets (Dunnhummby, and Open Food Facts Databases).
-Welcome to a typical day of a DLAB scientist...     
+But most importantly, this young data scientist is on the verge of having answers to these questions. In fact, this data story will unveil the many analysis and discoveries from our data scientist, through these two datasets (Dunnhummby, and Open Food Facts Databases).<br>
+Welcome to a typical day of a DLAB scientist, and this scientist, it is you !     
 
 **Side note:** all our plots are dynamic, feel free to interact with them! It is recommended to use a modern browser on a non-mobile device.
 
 # Social status and product consumption
 
+They say there is no accounting for taste. Each one of us has a favoured nutrition routine, some are big on healthy food. Others are foody and like to serve their palates with as many types of meals as they can. And a lot of us choose to indulge guilty pleasures and disregard how healthy they eat. But what if this isn’t really a choice ? What if our social status predetermines the way we eat ?
+
+In this article, we analyse the relation between the social status of household and their food consumption habits. We aim to verify if there is an impact of social class on the quality of nutrition, and if so to which extent.
+
+## What defines social status ?
+
+The social status is a subjective characterization of a household. It can be related to its wealth, the professional status of a member, the age category, etc. In this analysis, we choose to define the social status using three indicators the income of the household, its age category, as well as the marital status.
+
+
+## Social Status VS Food Retail
+
 <div id="income-sales"></div>
+
+Let us first take a look at the correlations between the social status of households and the prices of the food products consumed.
+In fact, there is a high correlation between the income and the total price of foods bought. Indeed, households with a low income seem to buy in general in general cheap food products. Also, the higher the income, the higher is the budget allocated by the household to food consumption, and the higher the average price paid per product is. Households with an income higher than 125K dollars are the ones that pay the most for food and seem to buy expensive products, whilst households with an income lower than 50K dollars tend to pay a lot less and go for cheaper products.
+
+## Social Status VS Food types
+
+If there is a disparity of food consumption between social classes, we expect to find there are some products that are much more consumed by certain households than others.
 
 <div id="purchases-income"></div>
 
+Naturally there are some products that are common to all social classes, which can be qualified as essential needs. These include bananas, milk, eggs and bread.<br>
+There also some food products that can be qualified as specific to a social class, since they are much more consumed in one than the others. For example, strawberries seem to be specific to household with high income, we can clearly see that their consumption grows higher with the wealth level of the households. The opposite effect can be observed for Hamburger Buns, which are more consumed in low income households than in the ones with higher income.
+
 <div id="purchases-age"></div>
 
-<div id="purchases-marital"></div>
+Using the age as the indicator, Soft Drinks seem to be consumed more by young individuals than by older ones. Also there seems to be a disparity in consumption of essential needs. The consumption of healthy products such as fruits, vegetables and protein rich foods increases with the age. In the same sense, the higher the age category of the household is,  the lower is the consumption of unhealthy products.
+
 
 # Healthiness of food
 
 What is our food made of? How is unhealthy food characterized? Are there any food categories more likely to be unhealthy?
 
-Those are the questions we asked ourselves. To answer them we analyzed data from the [Open Food Facts](https://openfoodfacts.org) database, where we aggregated hundred of thousands of products.
+Those are the questions we asked ourselves. To answer them we analyzed data from the [Open Food Facts](https://openfoodfacts.org) database. The Open Food Facts database references one million food products along with associated information such as category, ingredients or nutritive value. It is an open database in which everyone can contribute through the OpenFoodFacts App, and which can be used to make better food choices.
 
 ## What's in our food?
 
-Product labeling plays an important in informing the client about what they are about to consume. All countries have a regulation regarding food labeling, some are more less transparent than others.
+Product labeling plays an important in informing the client about what they are about to consume. All countries have proper government regulation agencies regarding food labeling. And of course, some of them are more/less transparent than others.
 
-Here we were interested in the ingredient list of the products. The information is given as a (usually) unquantified and unordered list of base ingredients. As we will see further on, it is not an absolute measure of healthiness.
+First, we started this study by looking at the ingredient list of the products. The information is given as a (usually) unquantified and unordered list of base ingredients. As we will see further on, it is not an absolute measure of healthiness.
 
 <div id="top-ingredients"></div>
 
@@ -86,7 +108,9 @@ As one could expect the three top ingredients are salt, sugar and water. About 1
 
 What are the combinations of these ingredients? The above plot represents the [phi coefficient](https://en.wikipedia.org/wiki/Phi_coefficient) between each pair of ingredients, a statistical measure of association between two binary variables. For instance, it seems that garlic often comes with other spices, vinegar often combined with food flavoring, and corn syrup with additional sugar. On the other hand salt is less likely to be included with sugar or ascorbic acid. 
 
-Finally, it turns out we can actually characterize food products by only looking at their ingredients. Below you may find the _map of food_, a spatial representation of products by their similarity in terms of ingredients. Use the query field to highlight products by their name: `chocolate`, `soda`, `fruit`, `cheese`, ...
+Finally, it turns out we can actually characterize food products by only looking at their ingredients. Below you may find the **_map of food_**, a spatial representation of products by their similarity in terms of ingredients. Use the query field to highlight products by their name: `chocolate`, `soda`, `fruit`, `cheese`, ...
+
+**Feel free to play with it !**
 
 <div style="text-align: center; margin-top: 20px">
 <form action="#" id="query-form" style="display: inline-block">
@@ -96,15 +120,15 @@ Finally, it turns out we can actually characterize food products by only looking
 </div>
 <div id="products-ingredients"></div>
 
-This visualization shows us that names of the products are highly correlated with what they are made of. However correlation isn't causality, don't judge a book by its cover! It also highlights marketing strategies used by corporations to trigger positive emotions on the consumer; one of them is by using buzzwords such as `deluxe`, `mix` and `homestyle`.
+This visualization shows us that names of the products are highly correlated with what they are made of. However correlation is not causality, don't judge a book by its cover! It also highlights marketing strategies used by corporations to trigger positive emotions on the consumer; one of them is by using buzzwords such as `deluxe`, `mix` and `homestyle`.
 
 <div id="correlation-sugars-fat"></div>
 
-In some country and states, it is mendatory to give the detailed quantity of salt, sugar, fat and proteins. These informations give us a more accurate insight about the healthiness. For instance here is an interesting property: if a product contains sugar it is likely to either not contain fat at all (sweets) or contain an equivalent amount of fat.
+In some country and states, it is mandatory to give the detailed quantity of salt, sugar, fat and proteins. This information give us a more accurate insight about the healthiness. For instance here is an interesting property: if a product contains sugar it is likely to either not contain fat at all (sweets) or contain an equivalent amount of fat.
 
 ## How relevant is the nutritive grade?
 
-The _nutri-score_ is an attributed score for a given food product based on the amount of energy, saturated fat, sugar and sodium contained in it. The goal is to inform the consumer about the _nutritive value_. It does not take into account harmful additives!
+The **_nutri-score_** is an attributed score for a given food product based on the amount of energy, saturated fat, sugar and sodium contained in it. The goal is to inform the consumer about the _nutritive value_. It does not take into account harmful additives!
 
 Because the value of this score is computed by following strict rules, it should technically reflect the same thing in different countries. Right?
 
@@ -121,7 +145,7 @@ Still, if we have a broader look at the data we can clearly see that North Ameri
 
 <div id="additives-per-product"></div>
 
-Moreover the number of additives per product follows very accurately an exponential distribution. There even exists a product which contains 38 known additives. Yuck!
+Moreover the number of additives per product follows very accurately an exponential distribution. There even exists a product which contains 38 known additives. **Yuck!**
 
 Before going further, let's clarify the term "additive". A food additive is an added substance to preserve flavor, enhance its taste, appearance, or other qualities. Not all additives are synthetic, in fact some of them have been naturally used for centuries such as salt or vinegar. However not all additives are completely safe for us, as for `E250`.
 
@@ -133,7 +157,7 @@ What about dangerous ingredients such as palm oil?
 
 <div id="top-country-palm-oil"></div>
 
-While the United States are represented as not using much palm oil, it turns out they simply have a different _name_ for it: "vegetable oil"!
+While the United States and Australia are represented as not using much palm oil, it turns out they simply have a different _name_ for it: "vegetable oil"!
 
 # Impact of social status on nutritive health
 
