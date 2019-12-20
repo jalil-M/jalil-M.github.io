@@ -179,13 +179,14 @@ While the United States and Australia are represented as not using much palm oil
 
 # Conclusion
 
-What a journey our young datascientist has lived ! <br>
+What a journey our DLAB scientist has lived ! <br>
 
-Food consumption is at the heart of many debates : it is vital for humans, but also the human race has always centered its attention toward this basic need which defines us completely.<br>
+Food consumption is at the heart of many debates : the human race has always centered its attention toward this basic need which defines us.<br>
 During this study, we finally established a connection between social status and food consumption. There is now a clear common trend between wealthiness and healthiness.<br>
 But this trend truly highlights the fact that cultures from around the world and especially the United States will share common food consumption trends in regards to this perpetual need of health, which means : less additives, less palm oil... less excess to sum it up!<br>
-For further work, it would be great to have access to a database similar to `dunnhumby` but applied to more retailers from around the world. Naturally, we also want more data in the Open Food Facts Database in order to apply some of our previous analysis techniques on many more countries previously ignored because of a lack of data.<br>
-Most importantly, some fresh ideas could be applied in this study, by finding a more **"social"** database that could identify patterns between a social network (friends, family, political orientation, religion etc...) and our daily food consumption in order to have a more comprehensive and broad point of view !
+
+For further work, it would be great to have access to a database similar to `dunnhumby` but applied to more retailers from around the world. Naturally, we also want more data in the `Open-Food-Facts` Database in order to apply some of our previous analysis techniques on many more countries previously ignored because of a lack of data.<br>
+Most importantly, some fresh ideas could be applied in this study, by finding a more **"social"** database that could identify patterns between any social network (friends, family, political orientation, religion etc...) and our daily food consumption in order to have a more comprehensive and broad point of view !
 
 In fact, being a DLAB scientist for a day was truly an amazing journey, and left us with some "food for taughts" ;) !   
  
