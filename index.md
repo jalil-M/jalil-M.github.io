@@ -43,6 +43,18 @@ layout: default
         <a href="#how-healthy-does-each-class-eat"><span class="title right">How healthy does each class eat?</span></a>
         <span class="chapter">C.1</span>
     </li>
+    <li>
+        <a href="#social-class-vs-nutrition-grade"><span class="title right">Social class VS Nutrition grade</span></a>
+        <span class="chapter">C.2</span>
+    </li>
+    <li>
+        <a href="#social-class-vs-food-composition"><span class="title right">Social class VS Food composition</span></a>
+        <span class="chapter">C.3</span>
+    </li>
+    <li>
+        <a href="#correlation-between-social-status-and-nutrition-grade"><span class="title right">Correlation between Social status and nutrition grade</span></a>
+        <span class="chapter">C.4</span>
+    </li>
 </ul>
 
 
@@ -164,7 +176,7 @@ While the United States and Australia are represented as not using much palm oil
 
 # Impact of social status on nutritive health
 ## How healthy does each class eat?
-### Social class Vs. Nutrition grade
+### Social class VS Nutrition grade
 Previously, we have seen that there is a relationship between some social status indicators and the choice of food types. Also, we have shown that the budget allocated to food consumption depends on the social status of the household. In this part, we  summarize this by studying the influence of social status on the general nutrition grade of products consumed.
 
 <table class="mini">
@@ -176,6 +188,8 @@ Previously, we have seen that there is a relationship between some social status
 </tbody>
 </table>
 
+First let us start with the impact of the income on the nutrition grade. Surprisingly, the results are in accordance with our hypothesis. Households with an income between 15K and 50K dollars tend to buy food products with low nutrition grade. As the income grows higher, the nutrition grade of consumed foods improves. For incomes between 175K and 250K dollars, we can see that the most frequent nutrition grade of consumed food products is very high. This shows that income has a direct relationship with how healthy a household eats. Wealthy households seem to eat a lot healthier than others with lower income. However, we can observe that for the super rich ones, the nutrition grade drops dramatically. May be Caviar isn’t that healthy after all.
+	
 <table class="mini">
 <thead>
 <tr><th>19-24</th><th>25-34</th><th>35-44</th><th>45-54</th><th>55-64</th><th>65+</th></tr>
@@ -184,12 +198,10 @@ Previously, we have seen that there is a relationship between some social status
 <tr><td>D</td><td>D</td><td>D</td><td>C</td><td>D</td><td>C</td></tr>
 </tbody>
 </table>
-
-First let us start with the impact of the income on the nutrition grade. Surprisingly, the results are in accordance with our hypothesis. Households with an income between 15K and 50K dollars tend to buy food products with low nutrition grade. As the income grows higher, the nutrition grade of consumed foods improves. For incomes between 175K and 250K dollars, we can see that the most frequent nutrition grade of consumed food products is very high. This shows that income has a direct relationship with how healthy a household eats. Wealthy households seem to eat a lot healthier than others with lower income. However, we can observe that for the super rich ones, the nutrition grade drops dramatically. May be Caviar isn’t that healthy after all.
 	
 What about the influence of the age ? The impact is not as visible as for the income. There is a tendency for young households to eat less healthier food than older ones, but the grade goes up by one level only.
 
-### Social class Vs. Food composition	
+### Social class VS Food composition	
 Let us now examine these observations in details. Considering the nutrition grade only is not completely representative of these influences. We complete it by looking at the food composition.
 
 <div id="income-radar"></div>
@@ -200,7 +212,7 @@ Low income households seem to consume more fat and proteins than others, they al
 
 If we do the same for the age category, we see that young households tend to consume more fats and sugars (carbohydrates) as well as high energetic products. Middle aged households seem to have a well balanced nutrition, with low fats and low sugar. Also the food products they choose have low energetic value. Seniors, on their side, consume very low sugar, but have a diet with a lot proteins and fat, and the products they buy are very energetic.
 
-## Correlation between Social status and nutrition grade:
+## Correlation between Social status and nutrition grade
 
 As we expected, we could observe that there is a direct link between social status and the healthiness of consumed food. But, we would like to know if these observations can be statistically confirmed. We take a look at the correlations between income, age and nutrition grade.
 
