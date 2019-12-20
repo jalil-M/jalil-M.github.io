@@ -267,3 +267,7 @@ p {
 .page-header {
     border-bottom: solid #d6d6d6 1px;
 }
+
+svg {
+    overflow: visible !important;
+}
