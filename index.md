@@ -175,6 +175,8 @@ While the United States and Australia are represented as not using much palm oil
 
 <div id="income-radar"></div>
 
+<div id="age-radar"></div>
+
 # Conclusion
 
 What a journey our young datascientist has lived ! <br>

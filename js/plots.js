@@ -280,10 +280,11 @@ Plotly.d3.csv(file('ply_nutrition_grade.csv'), (err, rows) => {
     const nutritionGradeGradient = ['#53783b', '#7b964a', '#b3c656', '#fcdb7e', '#fce198'];
 
     const quantifiers = ['with', 'without'];
-    const variables = ['additives', 'allergens'];
+    const variables = ['additives', 'allergens', 'palm_oil'];
     const suffixes = [
         'dangerous additives',
         'allergens',
+        'palm oil'
     ];
     const scope = ['world', 'us'];
     const scopeTitles = ['World', 'United States'];
@@ -537,3 +538,81 @@ Plotly.d3.csv(file('ply_income_radar.csv'), (err, rows) => {
 
     Plotly.newPlot('income-radar', data, fixed(layout), plyConfig);
 });
+
+Plotly.d3.csv(file('ply_age_radar.csv'), (err, rows) => {
+    const columns = {
+        energy_100g: 'Energy',
+        fat_100g: 'Fat',
+        carbohydrates_100g: 'Carbohydrates',
+        proteins_100g: 'Proteins'
+    };
+
+    const data = [];
+
+    for(let i = 0; i < rows.length; i ++) {
+        const row = rows[i];
+        const labels = [], values = [];
+
+        for(let col in columns) {
+            labels.push(columns[col]);
+            values.push(row[col]);
+        }
+        labels.push(labels[0]);
+        values.push(values[0]);
+        const layer = {
+            type: 'scatterpolar',
+            r: values,
+            theta: labels,
+            fill: false,
+            name: row.age
+        };
+
+        data.push(layer);
+    }
+
+    const layout = {
+        title: 'Radar',
+        polar: {
+            radialaxis: {
+                visible: false,
+            }
+        },
+        //grid: {rows: 4, columns: 3, pattern: 'independent'}
+    };
+
+    Plotly.newPlot('age-radar', data, fixed(layout), plyConfig);
+});
+
+/*Plotly.d3.text(file('ply_correlation_grades.csv'), text => {
+    const rows = Plotly.d3.csv.parseRows(text);
+
+    const array = rows.map(row => row.slice(1).map(v => parseFloat(v))).slice(1);
+
+    const data = [{
+        x: rows.slice(1).map(r => r[0]),
+        y: ['Mean Product Price', 'Total Food Budget'],
+        z: array[0].map((col, i) => array.map(row => row[i])),
+        type: 'heatmap'
+    }];
+
+    const layout = {
+        width: 500,
+        height: 500,
+        title: {
+            text: 'Correlation between income and spendings'
+        },
+        xaxis: {
+            title: {
+                text: 'Income'
+            }
+        },
+        yaxis: {
+            autorange: 'reversed'
+        },
+        zaxis: {
+            tickformat: ',.1%'
+        }
+    };
+
+    Plotly.newPlot('income-sales', data, fixed(layout), plyConfig);
+});*/
