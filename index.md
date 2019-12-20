@@ -18,11 +18,25 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor
 
 # Healthiness of food
 
-<div id="correlation-sugars-fat"></div>
+What is our food made of? How is unhealthy food characterized? Are there any food categories more likely to be unhealthy?
+
+Those are the questions we asked ourselves. To answer them we analyzed data from the [Open Food Facts](https://openfoodfacts.org) database, where we aggregated hundred of thousands of products.
+
+## What is our food made out of?
+
+Product labeling plays an important in informing the client about what they are about to consume. All countries have a regulation regarding food labeling, some are more less transparent than others.
+
+Here we were interested in the ingredient list of the products. The information is given as a (usually) unquantified and unordered list of base ingredients. As we will see further on, it is not an absolute measure of healthiness.
 
 <div id="top-ingredients"></div>
 
+As one could expect the three top ingredients are salt, sugar and water. About 15% of products contain citric acid, a compound that can be found in lemon and vinegar but that is also used for food flavoring.
+
 <div id="correlation-ingredients"></div>
+
+What are the combinations of these ingredients? The above plot represents the [phi coefficient](https://en.wikipedia.org/wiki/Phi_coefficient) between each pair of ingredients, a statistical measure of association between two binary variables. For instance, it seems that garlic often comes with other spices, vinegar often combined with food flavoring, and corn syrup with additional sugar. On the other hand salt is less likely to be included with sugar or ascorbic acid. 
+
+Finally, it turns out we can actually characterize food products by only looking at their ingredients. Below you may find the _map of food_, a spatial representation of products by their similarity in terms of ingredients. Use the query field to highlight products by their name: `chocolate`, `soda`, `fruit`, `cheese`, ...
 
 <div style="text-align: center; margin-top: 20px">
 <form action="#" id="query-form" style="display: inline-block">
@@ -32,8 +46,19 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor
 </div>
 <div id="products-ingredients"></div>
 
+This visualization shows us that names of the products are highly correlated with what they are made of. However correlation isn't causality, don't judge a book by its cover! It also highlights marketing strategies used by corporations to trigger positive emotions on the consumer; one of them is by using buzzwords such as `deluxe`, `mix` and `homestyle`.
+
+<div id="correlation-sugars-fat"></div>
+
+In some country and states, it is mendatory to give the detailed quantity of salt, sugar, fat and proteins. These informations give us a more accurate insight about the healthiness. For instance here is an interesting property: if a product contains sugar it is likely to either not contain fat at all (sweets) or contain an equivalent amount of fat.
+
+## Is the nutritive grading scheme relevant?
+
+The _nutri-score_ is an attributed score for a given food product based on the amount of energy, saturated fat, sugar and sodium contained in it. The goal is to inform the consumer about the _nutritive value_. It does not take into account harmful additives!
 
 <div id="grade-e250-world"></div>
+
+
 
 <div id="grade-dangerous-additives"></div>
 

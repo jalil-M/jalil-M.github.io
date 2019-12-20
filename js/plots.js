@@ -119,7 +119,8 @@ Plotly.d3.csv(file('ply_correlation_sugars_fat.csv'), (err, rows) => {
         },
         autosize: false,
         width: 500,
-        height: 500
+        height: 500,
+        hovermode: 'closest'
     };
 
     Plotly.newPlot('correlation-sugars-fat', data, fixed(layout), plyConfig);
@@ -320,7 +321,7 @@ Plotly.d3.csv(file('ply_distribution_average_additives_product.csv'), (err, rows
     }];
 
     const layout = {
-        title: 'Average number of additives per product by country',
+        title: 'Average number of additives per product',
         xaxis: {
             title: {
                 text: 'Number of additives'
