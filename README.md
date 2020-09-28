@@ -1,12 +1,34 @@
-## Installation and testing
+# ParticleGround-Portfolio
 
-1. Install Jekyll ([detailed steps](https://jekyllrb.com/docs/installation/)).
-2. Inside `blog/`, run `jekyll serve --watch`. This will start a local development server accessible at [`http://127.0.0.1:4000`](http://127.0.0.1:4000). It will also listen to file changes and will update the webpages accordingly.
+A particle-theme template as a landing page for your portfolio.
 
-## Contribute
+> [Demo](https://landing-page--itsron717.repl.co/)
 
-Edit the markdown file `index.md`.
+<img src="particle_demo/particle_demo.png"/>
 
-## GitHub pages
+# Using the Template
 
-Owner of the repository needs to enable this feature on their account.
+  - Fork and Clone the repository
+
+    ```
+    $ git clone https://github.com/itsron717/ParticleGround-Portfolio.git
+    ```
+ 
+  - Go inside the main repository
+  
+    ```
+    $ cd ParticleGround-Portfolio
+    ```
+    
+  - Modify `index.html` to change the names and links to point at your pages.
+  
+  - Upload your resume in the place of `deedy.pdf` (Or One can use the famous deedy template and build on that)
+   
+# Particle Feature
+
+The particle feature was obtained with the help of this [particleground](https://github.com/jnicol/particleground). The changes in the particles such as speed, drift, colour, direction, density, etc. can be modified in `demo.js`. Refer to the above link for more details.
+
+
+# References and Inspiration
+
+This template is a minimal form of the [Particle Jekyll Template](https://github.com/nrandecker/particle).
