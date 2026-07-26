@@ -1,30 +1,53 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
-  <base target="_blank">
-  <meta charset="UTF-8" />
-  <title>Abdeljalil Moussa</title>
-  <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" type="text/css">
-  <!-- remember, jQuery is completely optional -->
-  <!-- <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script> -->
-  <script type="text/javascript" src="js/jquery.particleground.js"></script>
-  <script type="text/javascript" src="js/demo.js"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Abdeljalil Moussa</title>
+<meta name="description" content="Jalil Moussa — AI &amp; Data engineer, Tech Lead in Zug." />
+<link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
 
-<div id="particles">
-  <div id="intro">
-       <h2 style="font-family: 'Syncopate', sans-serif; font-weight: 10;">Jalil Moussa&nbsp<!--<a href="resume.pdf" style="color: white;"><img src="logo.png" height="35" width="35"></a>--></h2>
-        <hr style="width: 50%; background-color: #E83951; border-color: #E83951;"> 
-    <a href="https://linkedin.com/in/abdeljalil-moussa-4712b0b4/" style="color: white;"><i class="fab fa-linkedin" style="font-size: 2em;"></i></a>
-    &nbsp
-    <a href="https://github.com/jalil-M/" style="color: white;"><i class="fab fa-github" style="font-size: 2em;"></i></a>
+<div class="page">
+  <div class="hero">
+    <canvas id="particles" aria-hidden="true"></canvas>
+
+    <header class="bar">
+      <span class="brand">A. Moussa</span>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="https://www.linkedin.com/in/abdeljalil-m-4712b0b4/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/jalil-M/" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </header>
+
+    <div class="hero-body">
+      <h1>Jalil Moussa</h1>
+      <div class="mark"></div>
+      <p class="role">AI &amp; Data engineer - Tech Lead in Zug</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/abdeljalil-m-4712b0b4/" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo"></i>LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/jalil-M/" target="_blank" rel="noopener"><i class="ph ph-github-logo"></i>GitHub</a>
+      </div>
+    </div>
   </div>
+
+  <section id="about" class="about">
+    <hr class="rule" />
+    <span class="kicker">About</span>
+    <p>Grew up in Morocco, currently in Switzerland. I lead data and AI work in finance, which mostly means turning very confident spreadsheets into systems that actually hold up.</p>
+    <p>Entrepreneur at heart: give me a problem and I will take it from the first coffee to production. Off the clock: golf (optimistically), and a boarding pass whenever the calendar looks away.</p>
+    <p>Work history on <a href="https://www.linkedin.com/in/abdeljalil-m-4712b0b4/" target="_blank" rel="noopener">LinkedIn</a>, code on <a href="https://github.com/jalil-M/" target="_blank" rel="noopener">GitHub</a>.</p>
+    <p class="foot">© 2026 Abdeljalil Moussa</p>
+  </section>
 </div>
 
+<script src="js/particles.js"></script>
 </body>
 </html>
